@@ -45,4 +45,11 @@ public class UserRegistration
     {
         return passwordRuleThree.matches("(?=.*[0-9])(?=.*[A-Z])[^\\s]{8,}$");
     }
+
+    // UC-8: Validate password (Rule 4: Exactly one special character along with previous rules)
+    public static boolean validateRuleFour(String passwordRuleFour)
+    {
+        // Explanation: at least one uppercase, one digit, exactly one special character, no spaces
+        return passwordRuleFour.matches("^(?=.*[A-Z])(?=.*[0-9])(?=^[^\\W_\\s]*[\\W_][^\\W_\\s]*$)\\S{8,}$");
+    }
 }

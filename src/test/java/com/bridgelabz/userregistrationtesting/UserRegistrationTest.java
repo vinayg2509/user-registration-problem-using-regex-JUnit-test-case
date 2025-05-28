@@ -68,4 +68,12 @@ class UserRegistrationTest
         System.out.println("Test passed for input :\""+password+"\"");
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {" ","12A34@12","AW21@#$ "," AQW1qwerty"})
+    void validateRuleFourTest(String password)
+    {
+        assertTrue(UserRegistration.validateRuleFour(password),"Test failed for input:\""+password+"\"");
+        System.out.println("Test passed for input :\""+password+"\"");
+    }
+
 }
