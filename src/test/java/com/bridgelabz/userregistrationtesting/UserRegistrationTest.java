@@ -43,4 +43,13 @@ class UserRegistrationTest
         System.out.println("Test passed for input: \"" + mobileNumber + "\"");
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"12345678","qwertyu","","1234567890"})
+    void validateRuleOneTest(String  password)
+    {
+        boolean result=UserRegistration.validateRuleOne(password);
+        assertTrue(result,"Test failed for input:\""+password+"\"");
+        System.out.println("Test passed for input:\""+password+"\"");
+    }
+
 }

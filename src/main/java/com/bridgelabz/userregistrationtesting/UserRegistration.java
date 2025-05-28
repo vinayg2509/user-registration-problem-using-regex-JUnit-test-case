@@ -28,4 +28,10 @@ public class UserRegistration
         return mobileNumber.matches("^[0-9]{2,}\\s[0-9]{10}");
     }
 
+    // UC-5: Validate password (Rule 1: Minimum 8 characters, no whitespace)
+    public static boolean validateRuleOne(String passwordRuleOne)
+    {
+        return passwordRuleOne.matches("^[^\\s]{8,}");  // At least 8 non-whitespace characters
+    }
+
 }
