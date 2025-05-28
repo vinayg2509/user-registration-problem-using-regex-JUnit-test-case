@@ -25,4 +25,13 @@ class UserRegistrationTest
         System.out.println("Test passed for input: \"" + lastName + "\"");
     }
 
+    @ParameterizedTest
+    @ValueSource(strings={"vinayg@gmail.com","vin.co.in","vinay123@gmail.com","vinay&@gmail.com"})
+    void validateEmailTest(String email)
+    {
+        boolean result = UserRegistration.validateEmail(email);
+        assertTrue(result, "Test failed for input: \"" + email + "\"");
+        System.out.println("Test passed for input: \"" + email + "\"");
+    }
+
 }

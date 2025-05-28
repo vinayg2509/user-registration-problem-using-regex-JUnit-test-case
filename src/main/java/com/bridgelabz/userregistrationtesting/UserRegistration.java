@@ -15,4 +15,11 @@ public class UserRegistration
         return secondName.matches("^[A-Z][a-zA-Z]{2,}$");
     }
 
+    // UC-3: Method to validate email
+    public static boolean validateEmail(String email)
+    {
+        // Regex to validate email format
+        return email.matches("^[a-zA-Z0-9]+([._+-]+[a-zA-Z0-9])?@[a-zA-Z0-9]+[a-zA-Z0-9]+\\.[a-z]{2,4}(\\.[a-z]{2,})?$");
+    }
+
 }
