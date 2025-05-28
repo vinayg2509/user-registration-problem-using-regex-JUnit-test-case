@@ -40,4 +40,9 @@ public class UserRegistration
         return passwordRuleTwo.matches("^(?=.*[A-Z])[^\\s]{8,}$"); // At least one uppercase, 8+ chars
     }
 
+    // UC-7: Validate password (Rule 3: At least one numeric digit and one uppercase letter)
+    public static boolean validateRuleThree(String passwordRuleThree)
+    {
+        return passwordRuleThree.matches("(?=.*[0-9])(?=.*[A-Z])[^\\s]{8,}$");
+    }
 }

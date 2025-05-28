@@ -60,5 +60,12 @@ class UserRegistrationTest
         System.out.println("Test passed for input :\""+password+"\"");
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"A1243SuuW","Acr","","AAw22321536","qwertyuio"})
+    void validateRuleThreeTest(String password)
+    {
+        assertTrue(UserRegistration.validateRuleThree(password),"Test failed for input:\""+password+"\"");
+        System.out.println("Test passed for input :\""+password+"\"");
+    }
 
 }
