@@ -34,4 +34,10 @@ public class UserRegistration
         return passwordRuleOne.matches("^[^\\s]{8,}");  // At least 8 non-whitespace characters
     }
 
+    // UC-6: Validate password (Rule 2: At least one uppercase letter)
+    public static boolean validateRuleTwo(String passwordRuleTwo)
+    {
+        return passwordRuleTwo.matches("^(?=.*[A-Z])[^\\s]{8,}$"); // At least one uppercase, 8+ chars
+    }
+
 }

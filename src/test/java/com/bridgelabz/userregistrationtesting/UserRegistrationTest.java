@@ -52,4 +52,13 @@ class UserRegistrationTest
         System.out.println("Test passed for input:\""+password+"\"");
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"A1243SW ","Acr453146","","AAw22321536"})
+    void validateRuleTwoTest(String password)
+    {
+        assertTrue(UserRegistration.validateRuleTwo(password),"Test failed for input:\""+password+"\"");
+        System.out.println("Test passed for input :\""+password+"\"");
+    }
+
+
 }
