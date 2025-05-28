@@ -22,4 +22,10 @@ public class UserRegistration
         return email.matches("^[a-zA-Z0-9]+([._+-]+[a-zA-Z0-9])?@[a-zA-Z0-9]+[a-zA-Z0-9]+\\.[a-z]{2,4}(\\.[a-z]{2,})?$");
     }
 
+    // UC-4: Method to validate mobile number (format: country code space 10-digit number)
+    public static boolean validateMobileNumber(String mobileNumber)
+    {
+        return mobileNumber.matches("^[0-9]{2,}\\s[0-9]{10}");
+    }
+
 }

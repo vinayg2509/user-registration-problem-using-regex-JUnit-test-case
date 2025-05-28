@@ -34,4 +34,13 @@ class UserRegistrationTest
         System.out.println("Test passed for input: \"" + email + "\"");
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"91 812345678","911234567890","91 8123804221"})
+    void validateMobileNUmber(String mobileNumber)
+    {
+        boolean result=UserRegistration.validateMobileNumber(mobileNumber);
+        assertTrue(result,"Test failed for input:\""+mobileNumber+"\"");
+        System.out.println("Test passed for input: \"" + mobileNumber + "\"");
+    }
+
 }
