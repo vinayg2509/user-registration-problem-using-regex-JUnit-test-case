@@ -9,11 +9,20 @@ class UserRegistrationTest
 {
     @ParameterizedTest
     @ValueSource(strings={"Vinay","Vin","vinay",""})
-    void validateFirstName(String firstName)
+    void validateFirstNameTest(String firstName)
     {
         boolean result = UserRegistration.validateFirstName(firstName);
         assertTrue(result, "Test failed for input: \"" + firstName + "\"");
         System.out.println("Test passed for input: \"" + firstName + "\"");
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings={"Vinay","Vin","vinay",""})
+    void validateLastNameTest(String lastName)
+    {
+        boolean result = UserRegistration.validateLastName(lastName);
+        assertTrue(result, "Test failed for input: \"" + lastName + "\"");
+        System.out.println("Test passed for input: \"" + lastName + "\"");
     }
 
 }

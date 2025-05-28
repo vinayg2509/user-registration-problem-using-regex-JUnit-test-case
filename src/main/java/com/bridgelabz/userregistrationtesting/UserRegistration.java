@@ -8,4 +8,11 @@ public class UserRegistration
         // Regex: starts with capital letter, followed by at least two letters
         return firstName.matches("^[A-Z][a-zA-Z]{2,}$");
     }
+
+    // UC-2: Method to validate second name (same rule as first name)
+    public static boolean validateLastName(String secondName)
+    {
+        return secondName.matches("^[A-Z][a-zA-Z]{2,}$");
+    }
+
 }
