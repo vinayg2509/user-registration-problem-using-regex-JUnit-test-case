@@ -1,5 +1,8 @@
 package com.bridgelabz.userregistrationtesting;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class UserRegistration
 {
     // UC-1: Method to validate first name with first capital letter and minimum 3 characters
@@ -52,4 +55,22 @@ public class UserRegistration
         // Explanation: at least one uppercase, one digit, exactly one special character, no spaces
         return passwordRuleFour.matches("^(?=.*[A-Z])(?=.*[0-9])(?=^[^\\W_\\s]*[\\W_][^\\W_\\s]*$)\\S{8,}$");
     }
+
+    // UC-9: Reusable method to validate emails (same as UC-3, could be improved by avoiding duplication)
+    // Set to store previously validated (unique) email addresses
+    private static final Set<String> emailSet = new HashSet<>();
+    public static boolean validEmail(String email)
+    {
+        String emailRegex= ("^[a-zA-Z0-9]+([._+-]+[a-zA-Z0-9])?@[a-zA-Z0-9]+[a-zA-Z0-9]+\\.[a-z]{2,4}(\\.[a-z]{2,})?$");
+        // Normalize to lowercase to avoid case-sensitive duplicates
+        email = email.toLowerCase();
+
+        // Check format and duplication
+        if (email.matches(emailRegex) && !emailSet.contains(email)) {
+            emailSet.add(email); // Store the email as validated
+            return true;
+        }
+        return false; // Invalid format or duplicate
+    }
+
 }
